@@ -1,22 +1,33 @@
 const API_URL = 'http://localhost:3000/api';
 
+// Helper function to get current token from localStorage
+function getToken() {
+    return localStorage.getItem('token');
+}
+
+// Helper function to get current user from localStorage
+function getUser() {
+    const userStr = localStorage.getItem('user');
+    return userStr ? JSON.parse(userStr) : null;
+}
+
 // Check authentication
-const token = localStorage.getItem('token');
-const user = JSON.parse(localStorage.getItem('user'));
+const token = getToken();
+const user = getUser();
 
 if (!token || !user || user.role !== 'student') {
     window.location.href = 'index.html';
 }
 
 // Display user name
-document.getElementById('userName').textContent = user.full_name;
+document.getElementById('userName').textContent = getUser().full_name;
 
 // Load user's submissions
 async function loadMySubmissions() {
     try {
         const response = await fetch(`${API_URL}/submissions/my`, {
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${getToken()}`
             }
         });
         
@@ -91,7 +102,7 @@ document.getElementById('submitForm').addEventListener('submit', async (e) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${getToken()}`
             },
             body: JSON.stringify(formData)
         });

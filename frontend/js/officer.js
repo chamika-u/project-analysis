@@ -1,22 +1,33 @@
 const API_URL = 'http://localhost:3000/api';
 
+// Helper function to get current token from localStorage
+function getToken() {
+    return localStorage.getItem('token');
+}
+
+// Helper function to get current user from localStorage
+function getUser() {
+    const userStr = localStorage.getItem('user');
+    return userStr ? JSON.parse(userStr) : null;
+}
+
 // Check authentication
-const token = localStorage.getItem('token');
-const user = JSON.parse(localStorage.getItem('user'));
+const token = getToken();
+const user = getUser();
 
 if (!token || !user || user.role !== 'medical_officer') {
     window.location.href = 'index.html';
 }
 
 // Display user name
-document.getElementById('userName').textContent = user.full_name;
+document.getElementById('userName').textContent = getUser().full_name;
 
 // Load statistics
 async function loadStatistics() {
     try {
         const response = await fetch(`${API_URL}/stats`, {
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${getToken()}`
             }
         });
         
@@ -44,7 +55,7 @@ async function loadSubmissions() {
     try {
         const response = await fetch(url, {
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${getToken()}`
             }
         });
         
@@ -105,7 +116,7 @@ function reviewSubmission(submissionId) {
     // Load submission details
     fetch(`${API_URL}/submissions/${submissionId}`, {
         headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${getToken()}`
         }
     })
     .then(response => response.json())
@@ -148,7 +159,7 @@ document.getElementById('reviewForm').addEventListener('submit', async (e) => {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${getToken()}`
             },
             body: JSON.stringify({ status, review_notes })
         });
