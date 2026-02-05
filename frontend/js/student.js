@@ -20,7 +20,7 @@ if (!token || !user || user.role !== 'student') {
 }
 
 // Display user name
-document.getElementById('userName').textContent = getUser().full_name;
+document.getElementById('userName').textContent = user.full_name;
 
 // Load user's submissions
 async function loadMySubmissions() {
