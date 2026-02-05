@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Medical Submission System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>🏥 Medical Submission System</h2>
+            </div>
+            <div class="nav-user">
+                <span id="userName"></span>
+                <button onclick="logout()" class="btn btn-secondary">Logout</button>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>Student Dashboard</h1>
+                <button onclick="showSubmitForm()" class="btn btn-primary">+ Submit Medical Certificate</button>
+            </div>
+
+            <!-- Submit Form Modal -->
+            <div id="submitModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close" onclick="closeSubmitForm()">&times;</span>
+                    <h2>Submit Medical Certificate</h2>
+                    
+                    <form id="submitForm">
+                        <div class="form-group">
+                            <label for="medical_date">Date of Medical Absence *</label>
+                            <input type="date" id="medical_date" name="medical_date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="medical_type">Type *</label>
+                            <select id="medical_type" name="medical_type" required>
+                                <option value="">Select type</option>
+                                <option value="examination">Examination</option>
+                                <option value="assessment">Assessment</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reason">Reason *</label>
+                            <input type="text" id="reason" name="reason" required placeholder="e.g., Fever, Headache">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Additional Details</label>
+                            <textarea id="description" name="description" rows="4" placeholder="Provide any additional details..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" onclick="closeSubmitForm()" class="btn btn-secondary">Cancel</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Submissions List -->
+            <div class="submissions-section">
+                <h2>My Medical Submissions</h2>
+                <div id="submissionsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/student.js"></script>
+</body>
+</html>

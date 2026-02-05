@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Officer Dashboard - Medical Submission System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>🏥 Medical Submission System</h2>
+            </div>
+            <div class="nav-user">
+                <span id="userName"></span>
+                <button onclick="logout()" class="btn btn-secondary">Logout</button>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>Medical Officer Dashboard</h1>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="stats-container" id="statsContainer">
+                <div class="stat-card">
+                    <h3>Total Submissions</h3>
+                    <p class="stat-number" id="totalSubmissions">0</p>
+                </div>
+                <div class="stat-card stat-pending">
+                    <h3>Pending</h3>
+                    <p class="stat-number" id="pendingSubmissions">0</p>
+                </div>
+                <div class="stat-card stat-approved">
+                    <h3>Approved</h3>
+                    <p class="stat-number" id="approvedSubmissions">0</p>
+                </div>
+                <div class="stat-card stat-rejected">
+                    <h3>Rejected</h3>
+                    <p class="stat-number" id="rejectedSubmissions">0</p>
+                </div>
+                <div class="stat-card stat-hold">
+                    <h3>On Hold</h3>
+                    <p class="stat-number" id="holdSubmissions">0</p>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters">
+                <select id="statusFilter" onchange="loadSubmissions()">
+                    <option value="">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="hold">On Hold</option>
+                </select>
+                
+                <select id="typeFilter" onchange="loadSubmissions()">
+                    <option value="">All Types</option>
+                    <option value="examination">Examination</option>
+                    <option value="assessment">Assessment</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- Submissions List -->
+            <div class="submissions-section">
+                <h2>Medical Submissions</h2>
+                <div id="submissionsList"></div>
+            </div>
+
+            <!-- Review Modal -->
+            <div id="reviewModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close" onclick="closeReviewModal()">&times;</span>
+                    <h2>Review Medical Submission</h2>
+                    
+                    <div id="submissionDetails"></div>
+                    
+                    <form id="reviewForm">
+                        <input type="hidden" id="submissionId">
+                        
+                        <div class="form-group">
+                            <label for="review_status">Decision *</label>
+                            <select id="review_status" name="status" required>
+                                <option value="">Select decision</option>
+                                <option value="approved">Approve</option>
+                                <option value="rejected">Reject</option>
+                                <option value="hold">Hold</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="review_notes">Notes</label>
+                            <textarea id="review_notes" name="review_notes" rows="4" placeholder="Add review notes..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Submit Review</button>
+                        <button type="button" onclick="closeReviewModal()" class="btn btn-secondary">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/officer.js"></script>
+</body>
+</html>
