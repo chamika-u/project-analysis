@@ -12,15 +12,12 @@ function getUser() {
 }
 
 // Check authentication
-const token = getToken();
-const user = getUser();
-
-if (!token || !user || user.role !== 'medical_officer') {
+if (!getToken() || !getUser() || getUser().role !== 'medical_officer') {
     window.location.href = 'index.html';
 }
 
 // Display user name
-document.getElementById('userName').textContent = user.full_name;
+document.getElementById('userName').textContent = getUser().full_name;
 
 // Load statistics
 async function loadStatistics() {
