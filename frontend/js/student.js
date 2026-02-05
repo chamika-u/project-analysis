@@ -12,12 +12,13 @@ function getUser() {
 }
 
 // Check authentication
-if (!getToken() || !getUser() || getUser().role !== 'student') {
+const currentUser = getUser();
+if (!getToken() || !currentUser || currentUser.role !== 'student') {
     window.location.href = 'index.html';
 }
 
 // Display user name
-document.getElementById('userName').textContent = getUser().full_name;
+document.getElementById('userName').textContent = currentUser.full_name;
 
 // Load user's submissions
 async function loadMySubmissions() {

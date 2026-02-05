@@ -12,12 +12,13 @@ function getUser() {
 }
 
 // Check authentication
-if (!getToken() || !getUser() || getUser().role !== 'medical_officer') {
+const currentUser = getUser();
+if (!getToken() || !currentUser || currentUser.role !== 'medical_officer') {
     window.location.href = 'index.html';
 }
 
 // Display user name
-document.getElementById('userName').textContent = getUser().full_name;
+document.getElementById('userName').textContent = currentUser.full_name;
 
 // Load statistics
 async function loadStatistics() {
