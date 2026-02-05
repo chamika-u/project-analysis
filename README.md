@@ -31,16 +31,44 @@ This system enables students to submit medical certificates for absences (examin
 ### Prerequisites
 - Node.js (v14 or higher)
 
-### Steps
-1. Clone the repository
-2. Install dependencies: `cd backend && npm install`
-3. Start server: `npm start`
-4. Open browser: `http://localhost:3000/index.html`
+### Quick Start (Recommended)
+```bash
+# Make startup script executable
+chmod +x start.sh
+
+# Run the application
+./start.sh
+```
+
+Then open your browser to: **http://localhost:3000/index.html**
+
+### Manual Setup
+```bash
+# Navigate to backend directory
+cd backend
+
+# Install dependencies
+npm install
+
+# Start the server
+node server.js
+```
+
+Then open your browser to: **http://localhost:3000/index.html**
 
 ## 👤 Default Credentials
 
-**Medical Officer:** `medical_officer` / `medical123`  
-**Student:** `student1` / `student123`
+✅ **All credentials verified and working:**
+
+**Medical Officer:**  
+- Username: `medical_officer`
+- Password: `medical123`
+
+**Students:**  
+- Username: `student1` | Password: `student123`
+- Username: `student2` | Password: `student123`
+
+> 💡 **Tip:** The credentials are also displayed on the login page for easy reference.
 
 ## 📁 Project Structure
 
