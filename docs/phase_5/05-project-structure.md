@@ -1,4 +1,4 @@
-# Project Structures
+# Project Structure
 
 ```
 project/
