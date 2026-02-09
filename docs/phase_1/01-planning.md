@@ -1,10 +1,10 @@
-# Planning Document
+# Planning document
 
 ## System Name
 Medical Certificate Submission and Management System
 
 ## Problem Statement
-Currently, students at Sabaragamuwa University of Sri Lanka submit medical certificates for examination or assessment absences through manual paper-based processes. This leads to delays in processing, difficulty in tracking submission status, lack of transparency in decision-making, and challenges in generating statistical reports for administrative purposes. There is a need for a digital system to streamline this process.
+The current medical certificate submission and management process at Sabaragamuwa University is manual and paper-based, leading to delays, increased workload, and errors in record-keeping. Students face difficulties in submitting certificates, while staff struggle with verification, tracking, and storage. The lack of a centralized, digital system also raises concerns about data security, accessibility, and transparency. There is a need for an online medical certificate management system to streamline submission, ensure secure storage, and improve efficiency for both students and administrators.
 
 ## Objectives
 1. Automate the medical certificate submission process for students
@@ -37,14 +37,15 @@ Currently, students at Sabaragamuwa University of Sri Lanka submit medical certi
 - Students have valid student IDs and university email addresses
 - Single university deployment (Sabaragamuwa University)
 
+
 ## Constraints
-- Development time: 4 weeks
+- Development time: 1 weeks
 - Team size: 3 members
-- Technology: Web-based system using Node.js and SQLite
+- Technology: Web-based system using Node.js 
 - Budget: No additional software licensing costs
 - Infrastructure: Must run on standard web server
 
 ## Team Members
-- Member 1 - Full-stack Developer
-- Member 2 - Frontend Developer & UI/UX Designer
-- Member 3 - Backend Developer & Database Administrator
+- Chamika - System Design , Development & Project cordination
+- Lasindu - Requirements Analysis & Documentation
+- Sakun - Testing & Documentation

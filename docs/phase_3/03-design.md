@@ -53,7 +53,6 @@ Stats Request -->| 4.0                 |---> Statistics Report
                  |                     |
                  +---------------------+
 ```
-
 ## Entity-Relationship Diagram (ERD)
 ```
 +------------------+           +-------------------------+

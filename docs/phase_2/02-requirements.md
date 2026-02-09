@@ -38,34 +38,12 @@
 
 ## Non-Functional Requirements
 
-### NFR1: Performance
 - System shall load pages within 2 seconds on standard internet connection
 - API responses shall complete within 1 second
 - System shall support at least 50 concurrent users
-
-### NFR2: Usability
 - Interface shall be intuitive requiring minimal training
 - System shall provide clear error messages
-- Dashboard shall display key information at a glance
-- Forms shall include helpful placeholder text
 
-### NFR3: Security
-- All passwords shall be hashed using bcrypt
-- Authentication shall use JWT tokens
-- API endpoints shall require valid authentication
-- Role-based access control shall prevent unauthorized actions
-- SQL injection protection through parameterized queries
-
-### NFR4: Reliability
-- System shall be available 24/7 during academic sessions
-- Database shall ensure data integrity
-- System shall handle errors gracefully without crashes
-
-### NFR5: Maintainability
-- Code shall follow consistent coding standards
-- Database schema shall be well-documented
-- API endpoints shall be clearly defined
-- System shall use modular architecture
 
 ## Use Cases
 
@@ -80,6 +58,7 @@
 5. System validates credentials
 6. System generates JWT token
 7. System redirects to student dashboard
+
 
 **Alternative Flow:**
 - If credentials invalid, system shows error message
@@ -142,3 +121,6 @@
 3. System retrieves filtered submissions
 4. System displays filtered results
 5. Medical officer can clear filters to view all
+
+
+
