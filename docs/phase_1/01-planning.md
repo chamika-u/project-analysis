@@ -24,7 +24,7 @@ The current medical certificate submission and management process at Sabaragamuw
 
 ### Out of Scope:
 - File upload for scanned medical certificates
-- Email/SMS notifications
+- Email notifications
 - Mobile application
 - Integration with university's main student information system
 - Payment processing
