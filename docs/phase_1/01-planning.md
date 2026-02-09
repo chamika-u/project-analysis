@@ -46,6 +46,6 @@ The current medical certificate submission and management process at Sabaragamuw
 - Infrastructure: Must run on standard web server
 
 ## Team Members
-- Chamika - System Design , Development & Project cordination
-- Lasindu - Requirements Analysis & Documentation
-- Sakun - Testing & Documentation
+- Chamika - Leading backend development and database design
+- Lasindu - Frontend development and documentation
+- Sakun - Testing, deployment, and documentation
