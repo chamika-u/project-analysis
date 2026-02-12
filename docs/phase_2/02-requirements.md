@@ -1,4 +1,4 @@
-# Requirement Document
+# Requirements Document
 
 ## Functional Requirements
 
